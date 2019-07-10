@@ -13,32 +13,31 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".PopWindowActivity">
+
+        </activity>
+        <activity android:name=".StudyTourActivity" />
         <activity
             android:name=".Main2Activity"
             android:label="@string/title_activity_main2"
-            android:theme="@style/AppTheme.NoActionBar">
-
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SplashActivity">
 
         </activity>
-        <activity android:name=".showActivitiesActivity">
-
-        </activity>
-        <activity android:name=".CheckUserActivity" >
+        <activity android:name=".showActivitiesActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
-
         </activity>
+        <activity android:name=".CheckUserActivity" />
         <activity android:name=".CheckNetworkConnection" />
-        <activity android:name=".MenuActivity" >
-
-        </activity>
+        <activity android:name=".MenuActivity" />
+        <activity
+            android:name=".pop"
+            android:theme="@style/AppTheme.CustomTheme" />
     </application>
 
 </manifest>
