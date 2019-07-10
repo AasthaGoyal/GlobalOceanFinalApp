@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ParadiseRestaurant.iml" filepath="$PROJECT_DIR$/ParadiseRestaurant.iml" />
+      <module fileurl="file://$PROJECT_DIR$/GlobalOceanFinalApp.iml" filepath="$PROJECT_DIR$/GlobalOceanFinalApp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>

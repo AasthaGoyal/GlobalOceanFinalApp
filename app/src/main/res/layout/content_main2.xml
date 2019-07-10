@@ -11,161 +11,115 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
         android:orientation="vertical">
 
-        <ImageView
-            android:id="@+id/imageView3"
-            android:layout_width="match_parent"
-            android:layout_height="282dp"
-            android:contentDescription="auckland"
-            app:srcCompat="@drawable/auckland" />
 
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="?android:attr/listDivider" />
-
-        <Button
-            android:id="@+id/button"
+        <TextView
+            android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Our Services" />
+            android:background="#FF5722"
+            android:text="Services"
+            android:textAlignment="center"
+            android:textSize="80px"
+            android:textStyle="bold" />
 
-        <HorizontalScrollView
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="70px"
+          >
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imgStudytour"
+                    android:layout_width="154dp"
+                    android:layout_height="133dp"
+                    android:clickable="true"
+                    app:srcCompat="@drawable/icon1" />
+
+                <ImageView
+                    android:id="@+id/imgTravel"
+                    android:layout_width="154dp"
+                    android:layout_height="133dp"
+
+                    app:srcCompat="@drawable/travelinnz" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <Button
+                    android:id="@+id/txtStudytour"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activity1" />
+
+                <Button
+                    android:id="@+id/txttravel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activity2" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <ImageView
+                    android:id="@+id/imgImmigration"
+                    android:layout_width="154dp"
+                    android:layout_height="133dp"
+                    app:srcCompat="@drawable/immigration" />
+
+                <ImageView
+                    android:id="@+id/imgInvestment"
+                    android:layout_width="154dp"
+                    android:layout_height="133dp"
+
+                    app:srcCompat="@drawable/investment" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <Button
+                    android:id="@+id/txtimmig"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activity3" />
+
+                <Button
+                    android:id="@+id/txtinvest"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/activity4" />
+            </TableRow>
+
+
+        </TableLayout>
+
+        <TextView
+            android:id="@+id/txtNews"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            >
-            o
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content">
+            android:background="#009688"
+            android:text="News"
+            android:textAlignment="center"
+            android:textSize="80px"
+            android:textStyle="bold" />
 
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation = "vertical">
 
-                    <ImageView
-                        android:layout_width="400dp"
-                        android:layout_height="300dp"
-                        android:background="#c1c1c1"
-                        android:src="@drawable/aboutus"
-                        app:srcCompat="@drawable/stuytour" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Study Tours"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation = "vertical">
-
-                    <ImageView
-                        android:layout_width="400dp"
-                        android:layout_height="300dp"
-                        android:background="#c1c1c1"
-                        android:src="@drawable/aboutus"
-                        app:srcCompat="@drawable/travelnz" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Travel in NZ"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation = "vertical">
-
-                    <ImageView
-                        android:layout_width="400dp"
-                        android:layout_height="300dp"
-                        android:background="#c1c1c1"
-                        android:src="@drawable/aboutus"
-                        app:srcCompat="@drawable/immigration" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Immigration"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation = "vertical">
-
-                    <ImageView
-                        android:layout_width="400dp"
-                        android:layout_height="300dp"
-                        android:background="#c1c1c1"
-                        android:src="@drawable/aboutus"
-                        app:srcCompat="@drawable/investment" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Investment and Trading"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation = "vertical">
-
-                    <ImageView
-                        android:layout_width="400dp"
-                        android:layout_height="300dp"
-                        android:background="#c1c1c1"
-                        android:src="@drawable/aboutus"
-                        app:srcCompat="@drawable/eoi" />
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Apply for EOI"
-                        android:textAlignment="center"
-                        android:textColor="@android:color/background_light"
-                        android:textSize="24sp"
-                        android:textStyle="bold" />
-
-
-                </LinearLayout>
-
-            </LinearLayout>
-        </HorizontalScrollView>
     </LinearLayout>
 
 </ScrollView>
