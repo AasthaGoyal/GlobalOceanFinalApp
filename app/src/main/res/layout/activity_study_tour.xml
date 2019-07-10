@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StudyTourActivity"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context=".StudyTourActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/textView4"
@@ -15,7 +22,7 @@
         android:text="Study Tour"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
-        android:textSize="80px"
+        android:textSize="60px"
         android:textStyle="bold" />
 
     <ImageView
@@ -24,4 +31,29 @@
         android:layout_height="400px"
         android:layout_margin="40px"
         app:srcCompat="@drawable/stuytour" />
-</LinearLayout>
+
+    <TextView
+        android:id="@+id/txtDesc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textSize="30px" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Features"
+        android:textAlignment="center"
+        android:textSize="40px"
+        android:textStyle="bold" />
+
+    <ListView
+        android:id="@+id/listview"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+      />
+
+    </LinearLayout>
+
+</ScrollView>

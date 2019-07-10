@@ -25,6 +25,16 @@
             android:textSize="50px"
             android:textStyle="bold" />
 
+
+        <ImageView
+            android:id="@+id/imgDemo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/contact"
+            android:contextClickable="true"
+            android:clickable="true"
+           />
+
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -40,13 +50,17 @@
                     android:id="@+id/imgStudytour"
                     android:layout_width="154dp"
                     android:layout_height="133dp"
-                    app:srcCompat="@drawable/study" />
+                    android:clickable="true"
+                    app:srcCompat="@drawable/study"
+
+                  />
 
                 <ImageView
                     android:id="@+id/imgTravel"
                     android:layout_width="154dp"
                     android:layout_height="133dp"
 
+                    android:clickable="true"
                     app:srcCompat="@drawable/travel" />
             </TableRow>
 
@@ -55,17 +69,22 @@
                 android:layout_height="match_parent">
 
 
-                <Button
+                <TextView
                     android:id="@+id/txtStudytour"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/activity1" />
+                    android:text="@string/activity1"
+                    android:textAlignment="center"
+                    android:textSize="30px"
+                    android:clickable="true"/>
 
-                <Button
+                <TextView
                     android:id="@+id/txttravel"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/activity2" />
+                    android:text="@string/activity2"
+                    android:textAlignment="center"
+                    android:textSize="30px"/>
             </TableRow>
 
             <TableRow
@@ -77,6 +96,7 @@
                     android:id="@+id/imgImmigration"
                     android:layout_width="154dp"
                     android:layout_height="133dp"
+                    android:clickable="true"
                     app:srcCompat="@drawable/nz" />
 
                 <ImageView
@@ -84,6 +104,7 @@
                     android:layout_width="154dp"
                     android:layout_height="133dp"
 
+                    android:clickable="true"
                     app:srcCompat="@drawable/invest" />
             </TableRow>
 
@@ -92,46 +113,46 @@
                 android:layout_height="match_parent">
 
 
-                <Button
+                <TextView
                     android:id="@+id/txtimmig"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/activity3" />
+                    android:text="@string/activity3"
+                    android:textAlignment="center"
+                    android:textSize="30px"/>
 
-                <Button
+                <TextView
                     android:id="@+id/txtinvest"
                     android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:text="@string/activity4" />
+                    android:text="@string/activity4"
+                    android:textAlignment="center"
+                    android:textSize="30px"/>
             </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
 
 
-                <ImageView
-                    android:id="@+id/imgEoi"
-                    android:layout_width="154dp"
-                    android:layout_height="133dp"
-                    app:srcCompat="@drawable/eoi" />
-            </TableRow>
 
-            <TableRow
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-
-                <Button
-                    android:id="@+id/txteoi"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/eoi" />
-            </TableRow>
 
 
 
         </TableLayout>
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="match_parent"
+            android:layout_height="133dp"
+            android:clickable="true"
+            app:srcCompat="@drawable/eoi" />
+
+        <TextView
+            android:id="@+id/txteoi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/eoi"
+            android:textAlignment="center"
+            android:textSize="40px"/>
+
 
         <TextView
             android:id="@+id/txtNews"
@@ -143,6 +164,8 @@
             android:textSize="50px"
             android:textColor="#FFFFFF"
             android:textStyle="bold" />
+
+
 
 
 

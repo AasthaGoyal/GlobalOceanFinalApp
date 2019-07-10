@@ -1,8 +1,12 @@
 package com.example.admin.paradiserestaurant;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -16,7 +20,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-public class showActivitiesActivity extends AppCompatActivity {
+public class showActivitiesActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
 
     ListView listview;
@@ -28,6 +32,23 @@ public class showActivitiesActivity extends AppCompatActivity {
 
        new getActivities().execute(link);
        listview = (ListView)findViewById(R.id.listview);
+
+       listview.setOnItemClickListener( this);
+    }
+
+    @Override
+    public void onItemClick(AdapterView<?> l, View v, int position, long id) {
+        Log.i("HelloListView", "You clicked Item: " + id + " at position:" + position);
+        // Then you start a new Activity via Intent
+        Intent intent = new Intent();
+        Bundle bundle = new Bundle();
+
+        bundle.putLong("id", id);
+        intent.setClass(this, ActivityDetailsActivity.class);
+        intent.putExtra("position", position);
+        // Or / And
+        intent.putExtra("id", id);
+        startActivity(intent);
     }
 
 

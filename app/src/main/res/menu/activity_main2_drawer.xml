@@ -31,7 +31,7 @@
         <menu>
             <item
                 android:id="@+id/nav_facebook"
-                android:icon="@drawable/fb"
+                android:icon="@drawable/facebook"
                 android:title="Facebook" />
             <item
                 android:id="@+id/nav_twitter"

@@ -3,9 +3,8 @@ package com.example.admin.paradiserestaurant;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,74 +17,39 @@ import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-import java.net.URLConnection;
 
-public class StudyTourActivity extends AppCompatActivity {
+public class ActivityDetailsActivity extends AppCompatActivity {
 
-    LinearLayout layout;
-    TextView txtDesc;
-    ListView listview;
-    String url = ApplicationSettings.hostUrl + "studyTour.php";
-    String featuresUrl = ApplicationSettings.hostUrl + "showFeatures.php";
+    TextView heading;
+    ListView listview, txtHeading;
+    ListView btnDuration;
+    String link =  ApplicationSettings.hostUrl + "activityDetails.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_study_tour);
+        setContentView(R.layout.activity_details);
 
-        layout = (LinearLayout)findViewById(R.id.layout);
-        txtDesc = (TextView)findViewById(R.id.txtDesc);
+        heading = (TextView)findViewById(R.id.heading);
+        txtHeading = (ListView)findViewById(R.id.txtheading);
+        btnDuration = (ListView)findViewById(R.id.duration);
         listview = (ListView)findViewById(R.id.listview);
 
-        new studyTour().execute(url);
-        new getFeatures().execute(featuresUrl);
+
+        Bundle bundle = getIntent().getExtras();
+
+        Long name = bundle.getLong("id");
+        heading.setText(name.toString());
+
+       if(name ==0)
+       {
+
+       }
+
+
     }
 
-
-    class studyTour extends AsyncTask<String, Void, String> {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @Override
-        protected String doInBackground(String... strings) {
-
-            StringBuilder sb = new StringBuilder();
-            try {
-                URL url = new URL(strings[0]);
-              /* String data = URLEncoder.encode("username", "UTF-8") + "=" + URLEncoder.encode("bonnie", "UTF-8");
-               data+= "&" + URLEncoder.encode("password", "UTF-8") + "=" +
-                                       URLEncoder.encode("bonnie","UTF-8");*/
-                URLConnection con = url.openConnection();
-                // con.setDoOutput(true);
-              /* OutputStreamWriter os = new OutputStreamWriter(con.getOutputStream());
-               os.write(data);
-               os.flush();*/
-                BufferedReader reader = new BufferedReader(new
-                        InputStreamReader(con.getInputStream()));
-                sb = new StringBuilder();
-                String line = null;
-                while ((line = reader.readLine()) != null) {
-                    sb.append(line);
-                }
-                Log.d("Wow Found ", sb.toString());
-            } catch (Exception e) {
-                Log.d("EXception", e.getMessage());
-            }
-
-            return sb.toString();
-        }
-
-        @Override
-        protected void onPostExecute(String result) {
-            txtDesc.setText(result);
-
-        }
-    }
-
-    class getFeatures extends AsyncTask<String, Void, String> {
+    class getDetails extends AsyncTask<String, Void, String> {
 
         @Override
         protected void onPreExecute() {
@@ -95,14 +59,13 @@ public class StudyTourActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
-          //  Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
             try
             {
                 loadIntoListview(s);
             }
             catch(JSONException ex)
             {
-
                 ex.printStackTrace();
             }
 
@@ -143,18 +106,28 @@ public class StudyTourActivity extends AppCompatActivity {
         JSONArray jsonArray = new JSONArray(json);
 
         String[] activities = new String[jsonArray.length()];
+        String[] duration = new String[jsonArray.length()];
+        String[] description = new String[jsonArray.length()];
+
         for(int i=0;i<jsonArray.length();i++)
         {
             JSONObject obj = jsonArray.getJSONObject(i);
-            activities[i] = obj.getString("featureDescription");
+            activities[i] = obj.getString("activityName");
+            description[i] = obj.getString("aDescription");
+            duration[i] = obj.getString("duration");
 
         }
 
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, activities);
-
         listview.setAdapter(arrayAdapter);
 
-    }
+        ArrayAdapter<String> arrayAdapter2 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, duration);
+        btnDuration.setAdapter(arrayAdapter2);
+
+        ArrayAdapter<String> arrayAdapte3 = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, description);
+        txtHeading.setAdapter(arrayAdapte3);
 
 
     }
+
+}
